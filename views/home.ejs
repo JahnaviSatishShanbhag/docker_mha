@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <title>homepage</title>
+</head>
+
+
+<body>
+  <style>
+    * {
+      font-family: "Times New Roman", Times, serif;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+
+    }
+
+    body {
+      /*font-family: Verdana, sans-serif;*/
+      background-color: #edf5e1;
+
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    .i {
+      padding: 2px;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      width: 100%;
+      position: absolute;
+      margin: 40px 0px;
+      margin-bottom: 0px;
+      display: flex;
+      z-index: -1;
+      left: 0px;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: relative;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+      z-index: -1;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: relative;
+      top: 0;
+      z-index: -1;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0px 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      z-index: -1;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {
+        font-size: 11px
+      }
+    }
+
+    .material-icons.md-18 {
+      font-size: 24px;
+    }
+
+    #white {
+      background-color: #EDF5E1;
+    }
+
+    .corona {
+      padding-top: 5px;
+    }
+
+    .d {
+      color: #05386B;
+      width: 315px;
+      border: 2px solid black;
+      padding: 30px;
+      margin: 50px;
+      display: inline-block;
+      box-shadow: 10px 15px 15px grey;
+      background-color: #8EE4AF;
+      box-sizing: border-box;
+      border-radius: 23px;
+    }
+
+    .d:hover {
+      background-color: #edf5e1;
+      border: 2px solid grey;
+    }
+
+
+    .mental {
+      display: flex;
+      justify-content: center;
+    }
+.points li{
+  float: none;
+}
+    #padding {
+      padding: 80px 40px;
+      color: #05386B;
+      margin: 10px auto;
+      font-weight: 1000;
+      font-size: 19px;
+    }
+
+    #padding li {
+      float: none;
+    }
+
+    h1 {
+      text-align: center;
+      border: none;
+      background-color: white;
+    }
+
+    .upper {
+      /* position:absolute;*/
+      top: 540px;
+      /*z-index:-1;*/
+      margin-bottom: 0px;
+      background-color: #edf5e1;
+    }
+  </style>
+
+  <div id="nav">
+    <img class="logo" src="/images/logoo.jpg">
+
+    <ul>
+      <a class="brand" href="#">Mental Health Awareness</a>
+      <a class="active" href="/home"><i class="fa fa-fw fa-home"></i> Home</a>
+      <% if (user==null) { %>
+        <a class="active" href="/signin"><i class="fa fa-users"></i>Login</a>
+        <a class="active" href="/signup"><i class="fa fa-question-circle"></i>Sign Up</a>
+        <% } else { %>
+          <a class="active" href="/signout">Logout</a>
+          <% } %>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">More </a>
+
+              <div class="dropdown-content">
+                <a class="active" href="/gethelp"><i class="fa fa-question-circle"></i>Get help</a>
+                <a class="active" href="/joinus"><i class="fa fa-users"></i>Join us</a>
+                <a class="active" href="/yourstory"><i class="fa fa-fw fa-book"></i>Your Story</a>
+                <a class="active" href="/corona"><i class="fas fa-viruses"></i><span class="corona">Covid-19</span></a>
+                <a class="active" href="/donate"><i class="fa fa-fw fa-rupee"></i>Donate</a>
+              </div>
+  </div>
+  </li>
+  </ul>
+  </div>
+  <div>Mental Health Awareness</div>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <!-- <div class="numbertext">1 / 3</div> -->
+      <img src="/images/Design2.png" style="width:1349px;height:490px;opacity:1">
+      <!-- <div class="text">Caption Text</div> -->
+    </div>
+    <div class="mySlides fade">
+      <!-- <div class="numbertext">2 / 3</div> -->
+      <img src="/images/Design1.png" style="width:1349px;height:490px;opacity:0.75">
+      <!-- <div class="text">Caption Two</div> -->
+    </div>
+
+    <div class="mySlides fade">
+      <!-- <div class="numbertext">3 / 3</div> -->
+      <img src="/images/Design3.png" style="width:1349px;height:490px;opacity:1">
+      <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+  </div>
+  <br>
+
+
+  </div>
+  <div id="padding">
+    <p>If you’re in good mental health, you can:
+    <ul>
+      <li>make the most of your potential</li>
+      <li>cope with life</li>
+      <li>play a full part in your family, workplace, community and among friends.</li>
+    </ul>
+    Some people call mental health ‘emotional health’ or ‘well-being’ and it’s just as important as good physical
+    health.
+
+    Mental health is everyone’s business. We all have times when we feel down or stressed or frightened. Most of the
+    time those feelings pass. But sometimes they develop into a more serious problem and that could happen to any
+    one of us.
+
+    There’s a stigma attached to mental health problems. This means that people feel uncomfortable about them and
+    don’t talk about them much. Many people don’t even feel comfortable talking about their feelings. But it’s
+    healthy to know and say how you’re feeling.<p>
+
+    <p><b>How do mental health problems affect people?</b>
+
+      Anxiety and depression can be severe and long-lasting and have a big impact on people’s ability to get on
+      with life.
+
+      Between one and two in every 100 people experience a severe mental illness, such as bi-polar disorder or
+      schizophrenia, and have periods when they lose touch with reality. People affected may hear voices, see
+      things no one else sees, hold unusual or irrational beliefs, feel unrealistically powerful, or read
+      particular meanings into everyday events.
+
+      Although certain symptoms are common in specific mental health problems, no two people behave in exactly the
+      same way when they are unwell.</p>
+  </div>
+  <div id="white" style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <div class="upper">
+    <div class="mental">
+      <div class="d">
+        <h3>ANXIETY AND PANIC ATTACKS</h3>
+        <p>Anxiety is a feeling of unease, worry or fear which, when persistent and impacting on daily life may be a
+          sign of an anxiety disorder. Generalised Anxiety Disorder, which is one common type of anxiety disorder,
+          is
+          estimated to impact 5.9% of adults in England.
+        <p><b>Symptoms</b><br>
+          Symptoms of anxiety include changes in thoughts and behaviour such:
+        <ul class="points">
+          <li>Restlessnes</li>
+          <li>A feeling of dread</li>
+          <li>A feeling of being “on-edge”</li>
+          <li>Difficulty concentrating</li>
+          <li>Difficulty sleeping</li>
+          <li>Irritability</li>
+        </ul>
+        </p>
+        <p>It can also involve physical feelings such as dizziness, nausea, heart palpitations (a noticeably strong,
+          fast heartbeat), sweating, shortness of breath, headache, or dry mouth.
+          Anxiety can lead to depression if left untreated</p>
+      </div>
+
+      <div class="d">
+        <h3>DEPRESSION</h3>
+        <p>Depression is a common mental health problem that causes people to experience low mood, loss of interest
+          or
+          pleasure, feelings of guilt or low self-worth, disturbed sleep or appetite, low energy, and poor
+          concentration.
+        <p>
+
+        <p><b>Symptoms:</b><br>
+          These can include:
+        <ul class="points">
+          <li>Tiredness and loss of energy</li>
+          <li>Sadness that doesn’t go away</li>
+          <li>Loss of self-confidence and self-esteem</li>
+          <li>Difficulty concentrating and not being able to enjoy things that are usually pleasurable of
+            interesting
+          </li>
+          <li>Feeling anxious all the time</li>
+          <li>Avoiding other people, sometimes even your close friends</li>
+          <li>Sleeping problems</li>
+          <li>Finding it hard to function at work/college/school</li>
+          <li>Loss of appetite</li>
+          <li>Thinking about suicide and death</li>
+          <ul>
+            </p>
+      </div>
+
+      <div class="d">
+        <h3>BIPOLAR DISORDER</h3>
+        <p>Bipolar disorder can be a life-long mental health problem that mainly affects your mood.<br>
+          You can experience episodes of:<br>
+          • mania<br>
+          • depression.<br>
+          Bipolar disorder used to be called manic depression.</p>
+        <p><b>Symptoms</b><br>
+          Symptoms of mania can include:
+        <ul class="points">
+          <li>being full of new and exciting ideas</li>
+          <li>moving quickly from one idea to another</li>
+          <li>hearing voices that other people can’t hear</li>
+          <li>being more irritable than normal</li>
+          <li>feeling much better about yourself than usual</li>
+          <li>being easily distracted and struggle to focus on one topic</li>
+          <li>not being able to sleep, or feel that you don’t want to sleep</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+    <div class="mental">
+      <div class="d">
+        <h3>HOARDING DISORDER</h3>
+        <p>Hoarding disorder is a persistent difficulty discarding or parting with possessions because of a
+          perceived
+          need to save them. A person with hoarding disorder experiences distress at the thought of getting rid of
+          the
+          items. Excessive accumulation of items, regardless of actual value, occurs.</p>
+        <p>Signs and symptoms may include:
+        <ul class="points">
+          <li>Excessively acquiring items that are not needed or for which there's no space</li>
+          <li>Persistent difficulty throwing out or parting with your things, regardless of actual value</li>
+          <li>Feeling a need to save these items, and being upset by the thought of discarding them</li>
+          <li>Building up of clutter to the point where rooms become unusable</li>
+          <li>Having a tendency toward indecisiveness, perfectionism, avoidance, procrastination, and problems
+            with
+            planning and organizing</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="d">
+        <h3>LONELINESS</h3>
+        <p>Feeling sad and unhappy about being socially isolated.Loneliness can be normal, and is only an indicator
+          of
+          underlying disease when feelings become excessive, all-consuming and interfere with daily living.</p>
+        <p>Chronic loneliness can also involve the following symptoms:
+        <ul class="points">
+          <li>decreased energy</li>
+          <li>feeling foggy or unable to focus</li>
+          <li>insomnia, interrupted sleep, or other sleep issues</li>
+          <li>decreased appetite</li>
+          <li>feelings of self-doubt, hopelessness, or worthlessness</li>
+          <li>a tendency to get sick frequently</li>
+          <li>body aches and pains</li>
+          <li>feelings of anxiousness or restlessness</li>
+          <li>increased desire to binge-watch shows or movies</li>
+          <li>cravings for physical warmth, such as hot drinks, baths, or cozy clothes and blankets</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="d">
+        <h3>POST TRAUMATIC STRESS DISORDER</h3>
+        <p>You may develop post-traumatic stress disorder after experiencing, or seeing, something that you find
+          traumatic.
+          The symptoms of PTSD can start immediately or after a delay of weeks or months.</p>
+        <p>Some of the symptoms are PTSD and complex PTSD are:
+        <ul class="points">
+          <li>reliving the experience through flashbacks, dreams or nightmares</li>
+          <li>not being able to feel emotions</li>
+          <li>negative alternations in mood</li>
+          <li>emotional dysregulation. This means it is difficult to control your emotions</li>
+          <li>negative self-perception such as feeling worthless or defeated</li>
+          <li>hyperarousal such as anger, irritability or sleep issues</li>
+          <li>hypervigilance such as feeling on constant alert</li>
+          <li>you avoid situations that remind you of your trauma.</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+  </script>
+
+</body>
+<footer class="footer-panel">
+  <div> Contact us @:<br><br>
+    Harshitha M-9466651754<br>
+    Jahnavi-9463464456<br>
+    Himani-6857492839<br>
+    Harshitha RM-9121383478<br>
+</footer>
+
+</html>

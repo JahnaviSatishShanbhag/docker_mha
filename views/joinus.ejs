@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <title>Join us</title>
+    <script src="/js/joinus.js"></script>
+  </head>
+  <style>
+    * {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+    }
+
+    /*#padding {
+      padding: 80px 40px;
+      color:white;
+      margin:10px auto;
+      font-weight: 900;
+    }*/
+    h1 {
+      text-align: center;
+      border: none;
+      background-color: white;
+    }
+
+    /* .upper{
+      position:absolute;
+      top:540px;
+      z-index:-1;
+    }*/
+    body {
+      background-image: url('images/Xxxx.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #edf5e1;
+    }
+
+    input[type=text] {
+      width: 90%;
+      padding: 12px 20px;
+      margin: 8px 20px;
+      box-sizing: border-box;
+      border: 2px white;
+      border-radius: 4px;
+    }
+
+    input[type=button] {
+      background-color: #05386b;
+      border: 2px red;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 20px;
+      cursor: pointer;
+      width: 90%;
+    }
+
+    input[type=number] {
+      width: 90%;
+      padding: 12px 20px;
+      margin: 8px 20px;
+      box-sizing: border-box;
+      border: 2px white;
+      border-radius: 4px;
+    }
+
+    #category {
+      width: 30%;
+      padding: 12px 20px;
+      margin: 8px 20px;
+      box-sizing: border-box;
+      border: 2px white;
+      border-radius: 4px;
+    }
+
+    #subcategory {
+      width: 35%;
+      padding: 12px 20px;
+      margin: 8px 20px;
+      box-sizing: border-box;
+      border: 2px white;
+      border-radius: 4px;
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+
+    .serif {
+      font-family: "Times New Roman", Times, serif;
+      margin: -20px 250px 40px 275px;
+      background-color: #EDF5E1;
+    }
+
+    #forms {
+      color: #05386b;
+      font-weight: bold;
+      margin-left: 100px;
+      border: 5px solid black;
+      max-width: 450px;
+      padding: 16px;
+      background-color: #8EE4AF;
+      border-radius: 23px;
+    }
+  </style>
+  <div id="nav">
+    <img class="logo" src="/images/logoo.jpg">
+
+    <ul>
+      <a class="brand" href="#">Mental Health Awareness</a>
+      <a class="active" href="/home"><i class="fa fa-fw fa-home"></i> Home</a>
+      <!--<li><a href="#gethelp">Get help</a></li>-->
+      <a class="active" href="/gethelp"><i class="fa fa-question-circle"></i>Get help</a>
+
+      <!--<li><a href="#join us">Join us</a></li>-->
+      <a class="active" href="/joinus"><i class="fa fa-users"></i>Join us</a>
+
+      <!--<li><a href="#YourStory">Your Story</a></li>-->
+      <a class="active" href="/yourstory"><i class="fa fa-fw fa-book"></i>Your Story</a>
+
+      <!--<li><a href="#covid-19">Covid-19</a></li>-->
+      <a class="active" href="/corona"><i class="material-icons md-18"></i><span class="corona">Covid-19</span></a>
+
+      <!--<li><a href="#donate">Donate</a></li>-->
+      <a class="active" href="/donate"><i class="fa fa-fw fa-rupee"></i>Donate</a>
+      <a class="active" href="/signout">Logout</a>
+
+    </ul>
+  </div>
+
+  <div>
+    <br><br><br><br><br><br><br>
+    <h1 class="serif" style="text-align:center; color:#05386b;"><b>REGISTER TO BE A PART OF OUR CAMPAIGN</b></h1>
+    <div id="forms">
+      <form id="theform" method="POST">
+        <label style="color: #05386b; font-weight: bold;" for="fname">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter  name"><br>
+        <div id="demo1"></div>
+        <label style="color: #05386b; font-weight: bold;" for="lname">Email id:</label><br>
+        <input type="text" id="email" name="email" placeholder="Enter Email id"><br>
+        <div id="demo2"></div>
+        <label style="color: #05386b; font-weight: bold;" for="fname">Contact number:</label><br>
+        <input type="text" id="phone" name="phone" placeholder="Enter  number"><br>
+        <div id="demo3"></div>
+        <label style="color: #05386b; font-weight: bold;" for="fname">Address:</label><br>
+        <input type="text" id="address" name="address" placeholder="Enter  address"><br>
+        <div id="demo4"></div>
+        <label style="color: #05386b; font-weight: bold;" name="date" for="day">Date of campaign for <%=presentyear%>
+            :</label><br>
+        <select name="category" class="required-entry" id="category"
+          onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+          <option value="">Select date</option>
+          <option value="5">5</option>
+          <option value="15">15</option>
+          <option value="25">25</option>
+
+        </select>
+        <script type="text/javascript" language="JavaScript">
+          document.write('<select name="subcategory" id="subcategory"><option value="">select month</option></select>')
+        </script>
+        <noscript>
+          <select name="subcategory" id="subcategory">
+            <option value="">select month</option>
+          </select>
+        </noscript>
+        <input type="button" value="Submit" onclick="redirectPage();">
+      </form>
+    </div>
+  </div>
+
+  <script language="javascript" type="text/javascript">
+    function dynamicdropdown(listindex) {
+      const d = new Date();
+
+      //const day= d.setDate(20);
+      const day = d.getDate();
+      console.log(day);
+      const month = d.getMonth();
+      const m = d.toLocaleString("default", { month: "long" });
+      d.setMonth(month + 1);
+      const m1 = d.toLocaleString("default", { month: "long" });
+      d.setMonth(month + 2);
+      const m2 = d.toLocaleString("default", { month: "long" });
+
+      document.getElementById("subcategory").length = 0;
+      switch (listindex) {
+        case "5":
+          document.getElementById("subcategory").options[0] = new Option("select month", "");
+
+          if (5 < day) {
+
+            document.getElementById("subcategory").options[1] = new Option(m1, m1);
+            document.getElementById("subcategory").options[2] = new Option(m2, m2);
+          }
+          else {
+            document.getElementById("subcategory").options[1] = new Option(m, m);
+            document.getElementById("subcategory").options[2] = new Option(m1, m1);
+          }
+
+          break;
+
+        case "15":
+          document.getElementById("subcategory").options[0] = new Option("select month", "");
+          if (15 < day) {
+            document.getElementById("subcategory").options[1] = new Option(m1, m1);
+            document.getElementById("subcategory").options[2] = new Option(m2, m2);
+          }
+          else {
+            document.getElementById("subcategory").options[1] = new Option(m, m);
+            document.getElementById("subcategory").options[2] = new Option(m1, m1);
+          }
+          break;
+        case "25":
+          document.getElementById("subcategory").options[0] = new Option("select month", "");
+          if (25 < day) {
+            document.getElementById("subcategory").options[1] = new Option(m1, m1);
+            document.getElementById("subcategory").options[2] = new Option(m2, m2);
+          }
+          else {
+            document.getElementById("subcategory").options[1] = new Option(m, m);
+            document.getElementById("subcategory").options[2] = new Option(m1, m1);
+          }
+
+          break;
+
+      }
+      return true;
+    }
+  </script>
+
+
+</body>
+<footer class="footer-panel" style="color:white">
+  <div> Contact us @:<br>
+    Harshitha M-9466651754<br>
+    Jahnavi-9463464456<br>
+    Himani-6857492839<br>
+    Harshitha RM-9121383478<br>
+</footer>
+
+</html>

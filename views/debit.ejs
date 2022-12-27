@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <script src="/js/debit.js"></script>
+    <title>Debit card payment</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        input {
+            height: 30px;
+            width: 310px;
+            border: 2px solid rgb(23, 181, 192);
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        #debitFlex {
+            border: 2px solid black;
+            border-radius: 23px;
+            height: 300px;
+            width: 500px;
+            background-color: #8EE4AF;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        input:hover {
+            border: 2px solid white;
+        }
+
+        #btn {
+            position: absolute;
+            color: white;
+            background-color: rgb(54, 45, 184);
+            border: 2px solid rgb(23, 181, 192);
+            margin: 8px;
+            width: 310px;
+            height: 36px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            right: 513px;
+
+        }
+
+        #btn:hover {
+            background-color: rgb(30, 94, 167);
+            border: 2px solid black;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        label {
+            position: relative;
+            color: #05386b;
+            font-weight: bold;
+            font-size: 18px;
+            right: 0px;
+        }
+
+        #debit,
+        #upi,
+        #credit {
+            margin-top: 40px;
+            height: 194px;
+        }
+
+        #upi {
+            height: 94px;
+        }
+
+        #debit input,
+        #upi input,
+        #credit input {
+            /* position:relative; */
+            border: 1px solid black;
+            border-radius: 0px;
+            /* left:4px; */
+        }
+
+        #oneLine,
+        #coneLine {
+            display: flex;
+        }
+
+        #exp,
+        #cexp {
+            display: flex;
+        }
+
+        #exp input,
+        #cexp input {
+            width: 60px;
+            margin: 2px;
+        }
+
+        #cvv,
+        #cvvc {
+            margin-top: 2px;
+            margin-left: 14px;
+        }
+
+        #cvv input,
+        #cvvc input {
+            width: 154px;
+        }
+
+        #xx {
+            margin-top: 100px;
+            margin-left: 310px;
+            color: #05386b;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<div id="nav">
+    <img class="logo" src="/images/logoo.jpg">
+    <ul>
+        <a class="brand" href="#">Mental Health Awareness</a>
+        <a class="active" href="/home"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a class="active" href="/gethelp"><i class="fa fa-question-circle"></i>Get help</a>
+        <a class="active" href="/joinus"><i class="fa fa-users"></i>Join us</a>
+        <a class="active" href="/yourstory"><i class="fa fa-fw fa-book"></i>Your Story</a>
+        <a class="active" href="/corona"><i class="material-icons md-18">coronavirus</i><span
+                class="corona">Covid-19</span></a>
+        <a class="active" href="/donate"><i class="fa fa-fw fa-rupee"></i>Donate</a>
+        <a class="active" href="/signout">Logout</a>
+    </ul>
+</div>
+
+<body>
+    <div id="xx">
+        Fill in the details of your debit card below to continue:</div>
+    <div id="debitFlex">
+        <div id="debit">
+            <label>Name on card</label>
+            <br>
+            <input id="cname" type="text" onblur="return checkCardName()">
+            <br>
+
+            <label>Card number</label>
+            <br>
+            <input id="cnumber" type="text" onblur="return checkCardNumber()">
+            <br>
+            <div id="oneLine">
+                <div>
+                    <label>Expiration</label>
+                    <br>
+                    <div id="exp">
+                        <input id="cmonth" type="text" onblur="return checkMonth()">
+                        <input id="cyear" type="text" onblur="return checkYear()">
+                    </div>
+                </div>
+                <br>
+                <div id="cvv">
+                    <label>CVV number</label>
+                    <br>
+                    <input id="ccvv" type="password" onblur="return checkCVV()">
+                </div>
+            </div>
+            <button id="btn" type="button" onclick="navigate()">Continue</button>
+        </div>
+    </div>
+
+    <footer class="footer-panel">
+        <div> Contact us @:<br><br>
+            Harshitha M-9466651754<br>
+            Jahnavi-9463464456<br>
+            Himani-6857492839<br>
+            Harshitha RM-9121383478<br>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/yourstory.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <!-- <script src="story.js"></script> -->
+    <title>Your story</title>
+    <div id="nav">
+        <img class="logo" src="/images/logoo.jpg">
+
+        <ul>
+            <a class="brand" href="#">Mental Health Awareness</a>
+            <a class="active" href="/home"><i class="fa fa-fw fa-home"></i> Home</a>
+            <!--<li><a href="#gethelp">Get help</a></li>-->
+            <a class="active" href="/gethelp"><i class="fa fa-question-circle"></i>Get help</a>
+
+            <!--<li><a href="#join us">Join us</a></li>-->
+            <a class="active" href="/joinus"><i class="fa fa-users"></i>Join us</a>
+
+            <!--<li><a href="#YourStory">Your Story</a></li>-->
+            <a class="active" href="/yourstory"><i class="fa fa-fw fa-book"></i>Your Story</a>
+
+            <!--<li><a href="#covid-19">Covid-19</a></li>-->
+            <a class="active" href="/corona"><i class="material-icons md-18"></i><span
+                    class="corona">Covid-19</span></a>
+
+            <!--<li><a href="#donate">Donate</a></li>-->
+            <a class="active" href="/donate"><i class="fa fa-fw fa-rupee"></i>Donate</a>
+            <a class="active" href="/signout">Logout</a>
+
+        </ul>
+    </div>
+</head>
+
+<body>
+    <h1>Your story</h1>
+    <div id="story">
+        <div id="h4">Here are the stories of a few people and their journey throughout the years. </div>
+        <div class="story">
+            <% stories.forEach((story)=>{ %>
+                <div class="box">
+                    <h3><%= story.name %>,</h3>
+                    <p style="text-align:justify"><%= story.story %></p>
+                </div>
+            <% }); %>
+        <!-- <button onclick="showBoxes()" id="btn">Show more</button> -->
+    </div>
+    </div>
+    <div id="form">
+        <h2>To share your story</h2>
+
+        <form method="POST" id="myForm" name="myForm">
+            <div>
+                <label for="myName">Name:</label>
+                <br>
+                <input id="name" type="text" name="myName">
+                <div id="demo1"></div>
+            </div>
+            <br>
+            <div>
+                <label for="story">Your story:</label>
+                <br>
+                <textarea cols="42" rows="12" name="story" minlength="5"></textarea>
+            </div>
+            <br>
+            <div>
+                <input type="button" value="Submit" id="btn1" onclick="return addStory();">
+            </div>
+        </form>
+    </div>
+    <footer class="footer-panel">
+        <div> Contact us @:<br><br>
+            Harshitha M-9466651754<br>
+            Jahnavi-9463464456<br>
+            Himani-6857492839<br>
+            Harshitha RM-9121383478<br>
+        </div>
+    </footer>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["myName"].value;
+            var y = document.forms["myForm"]["story"].value;
+            var name = document.getElementById("name");
+            var namep = /[0-9]/;
+            let check = false;
+            if (x == "" || y == "") {
+                alert("Please fill all the respective fields");
+                check = false;
+            }
+            else if (name.value != "") {
+                document.getElementById("demo1").style.visibility = "visible";
+
+                if (name.value.length < 5) {
+
+                    msg = "*Enter valid name";
+                    document.getElementById("demo1").innerHTML = msg;
+                    check = false;
+                }
+                else if (namep.test(name.value.trim())) {
+
+                    msg = "*Name should not contain digits.";
+                    document.getElementById("demo1").innerHTML = msg;
+                    check = false;
+                }
+                else if (/[^a-zA-Z0-9\s]/.test(name.value.trim())) {
+                    msg = "*No special characters allowed.";
+                    document.getElementById("demo1").innerHTML = msg;
+                    /*alert('Input is not alphanumeric');*/
+                    check = false;
+                }
+
+                else if (name.value.length > 5) {
+                    document.getElementById("demo1").style.visibility = "hidden";
+                    check = true;
+                }
+
+                else if (!namep.test(name.value.trim())) {
+                    document.getElementById("demo1").style.visibility = "hidden";
+                    check = true;
+
+                }
+            }
+            else if (/[^a-zA-Z0-9]/.test(name.value.trim()) == false) {
+
+                document.getElementById("demo1").style.visibility = "hidden";
+                check = true;
+            }
+            return check;
+        }
+        function addStory() {
+            let check = validateForm();
+            if (check == true) {
+                window.alert('Thank you for sharing your story');
+                let name=document.getElementById("name").value;
+                let story=document.forms["myForm"]["story"].value;
+                fetch('http://localhost:5500/yourstory', {
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    method: 'POST',
+                    body: JSON.stringify({ name: name, story: story})
+                })
+                .then((response)=>
+                {
+                    if (response.status==200)
+                    {
+                        location.reload();
+                    }
+                    return response.json();
+                })
+                .then((data)=>
+                {
+                    console.log(data);
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
